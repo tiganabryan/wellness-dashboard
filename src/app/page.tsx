@@ -1,7 +1,14 @@
+import prisma from "../../lib/prisma";
+import UserGreeting from "./components/UserGreeting";
+import WellnessCheckIn from "./components/WellnessCheckIn";
+import SystemsOverview from "./components/SystemsOverview";
+
 export default function Home() {
 	return (
-		<main className="flex min-h-screen flex-col items-center justify-between p-24">
-			TEST
+		<main>
+			<UserGreeting />
+			<WellnessCheckIn />
+			<SystemsOverview />
 		</main>
 	);
 }
