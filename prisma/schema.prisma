@@ -8,4 +8,16 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING") 
 }
 
-model Habits
+model Habits {
+    id        Int    @id @default(autoincrement())
+    title     String    
+    logs      Log[]
+}
+
+model Log {
+    id        Int    @id @default(autoincrement())
+    createdAt DateTime  @default(now())
+    habit     Habits @relation(fields: [habitId], references: [id])   
+    habitId   Int
+    completed Boolean
+}
