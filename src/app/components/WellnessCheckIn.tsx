@@ -33,8 +33,9 @@ const WellnessCheckIn = () => {
 
 	return (
 		<React.Fragment>
-			{checkInCards.map((checkInCard) => (
+			{checkInCards.map((checkInCard, index) => (
 				<WellnessCheckInCard
+					key={index}
 					question={checkInCard.question}
 					option1text={checkInCard.option1text}
 					option2text={checkInCard.option2text}
