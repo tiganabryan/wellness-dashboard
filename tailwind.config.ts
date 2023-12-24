@@ -12,7 +12,7 @@ const config: Config = {
 			current: "currentColor",
 			white: "#ffffff",
 			magenta: "#B55C97",
-			"light-pink": "#FEC5EB",
+			"light-magenta": "#E498CB",
 		},
 		extend: {
 			backgroundImage: {
