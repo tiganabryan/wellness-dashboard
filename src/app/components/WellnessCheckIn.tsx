@@ -1,4 +1,5 @@
 import React from "react";
+import WellnessCheckInCard from "./WellnessCheckInCard";
 
 const WellnessCheckIn = () => {
 	interface checkInCard {
@@ -7,7 +8,7 @@ const WellnessCheckIn = () => {
 		option2text: string;
 	}
 
-	const checkInCard: checkInCard[] = [
+	const checkInCards: checkInCard[] = [
 		{
 			question: "did you drink enough water today?",
 			option1text: "yes",
@@ -30,7 +31,17 @@ const WellnessCheckIn = () => {
 		},
 	];
 
-	return <React.Fragment></React.Fragment>;
+	return (
+		<React.Fragment>
+			{checkInCards.map((checkInCard) => (
+				<WellnessCheckInCard
+					question={checkInCard.question}
+					option1text={checkInCard.option1text}
+					option2text={checkInCard.option2text}
+				/>
+			))}
+		</React.Fragment>
+	);
 };
 
 export default WellnessCheckIn;
