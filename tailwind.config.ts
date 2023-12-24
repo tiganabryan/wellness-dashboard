@@ -13,6 +13,7 @@ const config: Config = {
 			white: "#ffffff",
 			magenta: "#B55C97",
 			"light-magenta": "#E498CB",
+			"muted-light-magenta": "#F5ECF1",
 		},
 		extend: {
 			backgroundImage: {
