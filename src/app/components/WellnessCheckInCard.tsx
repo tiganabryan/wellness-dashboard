@@ -4,7 +4,7 @@ import CheckInCardInput from "./CheckInCardInput";
 const WellnessCheckInCard = (checkInCardData: any) => {
 	return (
 		<React.Fragment>
-			<div className="bg-pinky-white drop-shadow-2xl rounded-xl my-5 p-5">
+			<div className="bg-pinky-white drop-shadow-2xl rounded-xl p-5">
 				<h4 className="mb-5">{checkInCardData.question}</h4>
 
 				<div className="border-solid border-2 border-pink-grey mb-3 p-4 rounded-lg flex">

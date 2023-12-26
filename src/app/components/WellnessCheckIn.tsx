@@ -38,7 +38,7 @@ const WellnessCheckIn = () => {
 
 	return (
 		<React.Fragment>
-			<div>
+			<div className="sm:grid sm:gap-4 sm:grid-cols-2 lg:grid lg:gap-4 lg:grid-cols-4">
 				{checkInCards.map((checkInCard, index) => (
 					<WellnessCheckInCard
 						key={index}
