@@ -14,6 +14,9 @@ const config: Config = {
 			magenta: "#B55C97",
 			"light-magenta": "#E498CB",
 			"muted-light-magenta": "#F5ECF1",
+			"pink-grey": "#CBB8CB",
+			"pinky-white": "#FFFCFE",
+			"dark-maroon": "#624C62",
 		},
 		extend: {
 			backgroundImage: {

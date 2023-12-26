@@ -6,7 +6,7 @@ import DevelopersNote from "./components/DevelopersNote";
 
 export default function Home() {
 	return (
-		<main className="p-10 justify-center">
+		<main className="p-10 justify-center bg-pinky-white">
 			<DevelopersNote />
 			<UserGreeting />
 			<WellnessCheckIn />
