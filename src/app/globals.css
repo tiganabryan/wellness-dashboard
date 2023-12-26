@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer components {
+@layer components {
 	.radio-input {
-		@apply flex appearance-none outline-none rounded-full border-solid  border-1 border-pink-grey h-4 w-4 m-auto shrink-1;
+		@apply flex outline-none rounded-full border-solid  border border-pink-grey h-4 w-4 m-auto shrink;
 	}
-} */
+}

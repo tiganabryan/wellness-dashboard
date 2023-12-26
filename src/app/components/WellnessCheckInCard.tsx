@@ -7,10 +7,10 @@ const WellnessCheckInCard = (checkInCardData: any) => {
 			<div className="bg-pinky-white drop-shadow-2xl rounded-xl my-5 p-5">
 				<h4 className="mb-5">{checkInCardData.question}</h4>
 
-				<div className="border-solid border-2 border-pink-grey mb-3 p-4 rounded-lg">
+				<div className="border-solid border-2 border-pink-grey mb-3 p-4 rounded-lg flex">
 					<label
 						htmlFor={checkInCardData.name}
-						className="text-dark-maroon"
+						className="text-dark-maroon grow"
 					>
 						{checkInCardData.option1text}
 					</label>
@@ -22,14 +22,15 @@ const WellnessCheckInCard = (checkInCardData: any) => {
 					/>
 				</div>
 
-				<div className="border-solid border-2 border-pink-grey mb-3 p-4 rounded-lg">
+				<div className="border-solid border-2 border-pink-grey mb-3 p-4 rounded-lg flex">
 					<label
 						htmlFor={checkInCardData.name}
-						className="text-dark-maroon"
+						className="text-dark-maroon grow"
 					>
 						{checkInCardData.option2text}
 					</label>
 					<input
+						className="radio-input"
 						type="radio"
 						name={checkInCardData.name}
 						id={checkInCardData.name}
