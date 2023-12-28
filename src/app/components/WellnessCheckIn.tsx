@@ -38,17 +38,28 @@ const WellnessCheckIn = () => {
 
 	return (
 		<React.Fragment>
-			<div className="gap-4 sm:grid sm:grid-cols-2 lg:grid lg:grid-cols-4">
-				{checkInCards.map((checkInCard, index) => (
-					<WellnessCheckInCard
-						key={index}
-						name={checkInCard.name}
-						question={checkInCard.question}
-						option1text={checkInCard.option1text}
-						option2text={checkInCard.option2text}
-					/>
-				))}
-			</div>
+			<form action="" method="post">
+				<div className="gap-4 sm:grid sm:grid-cols-2 lg:grid lg:grid-cols-4">
+					{checkInCards.map((checkInCard, index) => (
+						<WellnessCheckInCard
+							key={index}
+							name={checkInCard.name}
+							question={checkInCard.question}
+							option1text={checkInCard.option1text}
+							option2text={checkInCard.option2text}
+						/>
+					))}
+				</div>
+
+				<div className="flex justify-end">
+					<button
+						type="submit"
+						className="bg-magenta text-white rounded-lg py-2 px-6 mt-4"
+					>
+						submit
+					</button>
+				</div>
+			</form>
 		</React.Fragment>
 	);
 };
