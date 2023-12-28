@@ -32,7 +32,7 @@ const SystemsOverview = () => {
 	];
 	return (
 		<React.Fragment>
-			<div className="flex">
+			<div className="flex gap-4 mt-5">
 				{habitCards.map((card, index) => (
 					<HabitCard
 						key={index}
