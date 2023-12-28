@@ -35,7 +35,7 @@ const SystemsOverview = () => {
 			<h5 className="text-dark-maroon font-semibold">
 				systems functioning • 2 warnings
 			</h5>
-			<div className="gap-4 mt-5 grid sm:grid-cols-2 lg:grid-cols-4">
+			<div className="gap-4 mt-5 grid grid-cols-2 sm:grid-cols-4">
 				{habitCards.map((card, index) => (
 					<HabitCard
 						key={index}
