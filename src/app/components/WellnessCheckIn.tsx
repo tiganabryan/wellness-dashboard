@@ -39,7 +39,7 @@ const WellnessCheckIn = () => {
 	return (
 		<React.Fragment>
 			<form action="" method="post">
-				<div className="gap-4 sm:grid sm:grid-cols-2 lg:grid lg:grid-cols-4">
+				<div className="gap-4 grid sm:grid-cols-2 lg:grid-cols-4">
 					{checkInCards.map((checkInCard, index) => (
 						<WellnessCheckInCard
 							key={index}
