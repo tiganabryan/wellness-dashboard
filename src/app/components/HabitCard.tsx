@@ -11,8 +11,9 @@ const HabitCard = (habitCards: any) => {
 			<Image
 				className="flex"
 				src={habitCards.iconPath}
-				width={150}
-				height={150}
+				layout="responsive"
+				width={500}
+				height={500}
 				alt={habitCards.altText}
 			/>
 			<h5 className="text-dark-maroon">{habitCards.name}</h5>
