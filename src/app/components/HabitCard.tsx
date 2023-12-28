@@ -3,16 +3,17 @@ import React from "react";
 import { useState } from "react";
 import Image from "next/image";
 
-const HabitCard = (iconPath: string) => {
+const HabitCard = (habitCards: any) => {
 	const [borderColour, setBorderColour] = useState("green");
 
 	return (
 		<div className="border-solid border-2 border-green">
 			<Image
-				src="/bottleIcon.svg"
-				width={500}
-				height={500}
-				alt="Picture of the author"
+				className="flex"
+				src={habitCards.iconPath}
+				width={100}
+				height={100}
+				alt={habitCards.altText}
 			/>
 		</div>
 	);
