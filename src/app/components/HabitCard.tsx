@@ -18,7 +18,7 @@ const HabitCard = (habitCards: any) => {
 					sizes="(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw"
 					alt={habitCards.altText}
 				/>
-				<h5 className="text-dark-maroon">{habitCards.name}</h5>
+				<h5 className="text-dark-maroon mb-4">{habitCards.name}</h5>
 			</div>
 		</div>
 	);
