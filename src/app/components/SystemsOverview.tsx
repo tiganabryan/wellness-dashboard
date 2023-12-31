@@ -1,5 +1,7 @@
 import React from "react";
 import HabitCard from "./HabitCard";
+import prisma from "../../../lib/prisma";
+import { GetStaticProps } from "next";
 
 const SystemsOverview = () => {
 	interface habitCard {
@@ -32,10 +34,10 @@ const SystemsOverview = () => {
 	];
 	return (
 		<React.Fragment>
-			<h5 className="text-dark-maroon font-semibold">
+			<h5 className="text-dark-maroon font-semibold mb-5">
 				systems functioning • 2 warnings
 			</h5>
-			<div className="gap-4 mt-5 grid grid-cols-2 sm:grid-cols-4 max-w-4xl">
+			<div className="gap-4 grid grid-cols-2 sm:grid-cols-4 max-w-4xl">
 				{habitCards.map((card, index) => (
 					<HabitCard
 						key={index}
