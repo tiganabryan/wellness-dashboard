@@ -2,35 +2,15 @@
 import React from "react";
 import prisma from "../../../lib/prisma";
 import { useState, useEffect } from "react";
-// import WellnessCheckInCard from "./WellnessCheckInCard";
 import CircleProgressBar from "./CircleProgressBar";
 
-const returnLogs = async () => {
-	const logs = await prisma.log.findMany({
-		where: { completed: true },
-		include: {
-			habit: {
-				select: { title: true },
-			},
-		},
-	});
-
-	// console.log(logs);
-
-	return logs;
-};
-
-// const WellnessCheckInCard = (question: string) => {
-// 	return (
-// 		<React.Fragment>
-// 			<div className="flex justify-center items-center bg-pinky-white drop-shadow-2xl rounded-xl p-5">
-// 				<h4 className="" onClick={}>
-// 					{question}
-// 				</h4>
-// 			</div>
-// 		</React.Fragment>
-// 	);
-// };
+interface checkInCard {
+	name: string;
+	question: string;
+	habitId: number;
+	stateValue: boolean;
+	stateSetter: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
 const WellnessCheckIn = () => {
 	const [enoughWater, setEnoughWater] = useState(false);
@@ -39,82 +19,45 @@ const WellnessCheckIn = () => {
 	const [stressed, setStress] = useState(false);
 	const [enoughSleep, setEnoughSleep] = useState(false);
 
-	const handleInputChange = (
-		event: any,
-		state: React.Dispatch<React.SetStateAction<boolean>>
-	) => {
-		state(event.target.value);
-	};
-
-	// const logs = await returnLogs();
-	// console.log({ logs });
-	interface checkInCard {
-		name: string;
-		question: string;
-		option1text: string;
-		option2text: string;
-		stateValue: boolean;
-		stateSetter: React.Dispatch<React.SetStateAction<boolean>>;
-	}
-
 	const checkInCards: checkInCard[] = [
 		{
 			name: "water",
 			question: "did you drink enough water today?",
-			option1text: "yes",
-			option2text: "no",
+			habitId: 2,
 			stateValue: enoughWater,
 			stateSetter: setEnoughWater,
 		},
 		{
 			name: "stress",
 			question: "were you stressed today?",
-			option1text: "yes",
-			option2text: "no",
+			habitId: 5,
 			stateValue: stressed,
 			stateSetter: setStress,
 		},
 		{
 			name: "food",
-			question: "did you eat 3 meals today?",
-			option1text: "yes",
-			option2text: "no",
+			question: "did you eat enough today?",
+			habitId: 3,
 			stateValue: enoughFood,
 			stateSetter: setEnoughFood,
 		},
 		{
 			name: "conversation",
 			question: "did you have an uplifting conversation today?",
-			option1text: "yes",
-			option2text: "no",
+			habitId: 7,
 			stateValue: conversation,
 			stateSetter: setConversation,
 		},
 	];
 
-	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-		event.preventDefault();
-		console.log(event);
-
-		// const log = await prisma.log.create({
-		// 	data: {
-
-		// 	},
-		// });
-	};
-
 	return (
 		<React.Fragment>
-			{/* {logs.map((log) => (
-				<div>{log.habit.title}</div>
-			))} */}
-
-			<h5 className="text-dark-maroon font-semibold mb-5 text-lg">
+			<h5 className="text-dark-maroon font-semibold mb-5 text-xl">
 				wellness check-in
 			</h5>
 
 			<div className="flex mb-10">
-				<div className="gap-4 grid sm:grid-cols-2">
+				<div className="gap-6 grid sm:grid-cols-2">
 					{checkInCards.map((card) => (
 						<div
 							className={`flex justify-center items-center bg-pinky-white drop-shadow-2xl rounded-xl p-5 border ${
@@ -131,8 +74,15 @@ const WellnessCheckIn = () => {
 						</div>
 					))}
 				</div>
-
-				<CircleProgressBar />
+				<div className="flex flex-col justify-between lg:flex-row">
+					<CircleProgressBar />
+					<button
+						// onClick={() => submitLog()}
+						className="flex bg-magenta text-white rounded-lg py-2 mt-4 w-fit px-6 self-center justify-end"
+					>
+						submit
+					</button>
+				</div>
 			</div>
 		</React.Fragment>
 	);
