@@ -61,6 +61,8 @@ const WellnessCheckIn = () => {
 						completed: card.stateValue,
 					}),
 				});
+
+				card.stateSetter(false);
 			}
 		} catch (error) {
 			console.log("error:" + error);
