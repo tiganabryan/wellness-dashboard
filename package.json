@@ -9,8 +9,11 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@apollo/client": "^3.8.8",
+		"@graphql-yoga/node": "^3.9.1",
 		"@prisma/client": "^5.7.1",
 		"@vercel/postgres": "^0.5.1",
+		"graphql": "^16.8.1",
 		"next": "14.0.4",
 		"react": "^18",
 		"react-circular-progressbar": "^2.1.0",

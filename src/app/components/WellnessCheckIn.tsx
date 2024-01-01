@@ -50,6 +50,23 @@ const WellnessCheckIn = () => {
 		},
 	];
 
+	const submitLog = async (checkInCards: checkInCard[]) => {
+		try {
+			for (const card of checkInCards) {
+				await fetch("/api/submit-log", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({
+						habitId: card.habitId,
+						completed: card.stateValue,
+					}),
+				});
+			}
+		} catch (error) {
+			console.log("error:" + error);
+		}
+	};
+
 	return (
 		<React.Fragment>
 			<h5 className="text-dark-maroon font-semibold mb-5 text-xl">
@@ -77,7 +94,7 @@ const WellnessCheckIn = () => {
 				<div className="flex flex-col justify-between lg:flex-row">
 					<CircleProgressBar />
 					<button
-						// onClick={() => submitLog()}
+						onClick={() => submitLog(checkInCards)}
 						className="flex bg-magenta text-white rounded-lg py-2 mt-4 w-fit px-6 self-center justify-end"
 					>
 						submit
