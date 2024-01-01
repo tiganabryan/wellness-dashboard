@@ -2,7 +2,7 @@
 
 // WORK IN PROGRESS, NOT IN USE
 
-import prisma from "../../../../lib/prisma";
+// import prisma from "../../../../lib/prisma";
 import { NextApiRequest, NextApiResponse } from "next";
 
 // type ResponseData = {
@@ -13,31 +13,31 @@ import { NextApiRequest, NextApiResponse } from "next";
 // 	completed: boolean;
 // };
 
-export default async function handler(request: any, response: any) {
-	if (request.method === "GET") {
-		const { habitId } = request.query;
+// export default async function handler(request: any, response: any) {
+// 	if (request.method === "GET") {
+// 		const { habitId } = request.query;
 
-		try {
-			const habitLogs = await prisma.log.findMany({
-				where: {
-					habitId: habitId,
-					createdAt: {
-						gte: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000), // last 2 days
-					},
-					completed: true,
-				},
-			});
+// 		try {
+// 			const habitLogs = await prisma.log.findMany({
+// 				where: {
+// 					habitId: habitId,
+// 					createdAt: {
+// 						gte: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000), // last 2 days
+// 					},
+// 					completed: true,
+// 				},
+// 			});
 
-			response.json({
-				habitLogs,
-			});
-		} catch (error) {
-			console.error(error);
-			response.status(500).json({
-				error: "failed to fetch habit completion data :(",
-			});
-		}
-	} else {
-		response.status(405).end("method not allowed :/");
-	}
-}
+// 			response.json({
+// 				habitLogs,
+// 			});
+// 		} catch (error) {
+// 			console.error(error);
+// 			response.status(500).json({
+// 				error: "failed to fetch habit completion data :(",
+// 			});
+// 		}
+// 	} else {
+// 		response.status(405).end("method not allowed :/");
+// 	}
+// }
