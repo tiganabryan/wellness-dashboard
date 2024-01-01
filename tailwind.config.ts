@@ -24,6 +24,7 @@ const config: Config = {
 			"toolkit-middle-pink": "#F5BAF6",
 			"toolkit-end-pink": "#F4D7EA",
 			black: "black",
+			yellow: "#FDFF85",
 		},
 		extend: {
 			backgroundImage: {

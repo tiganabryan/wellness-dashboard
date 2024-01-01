@@ -8,6 +8,7 @@ const SystemsOverview = () => {
 		name: string;
 		iconPath: string;
 		altText: string;
+		habitId: number;
 	}
 
 	const habitCards: habitCard[] = [
@@ -15,21 +16,25 @@ const SystemsOverview = () => {
 			name: "water",
 			iconPath: "/bottleIcon.svg",
 			altText: "3d icon of bottle",
+			habitId: 2,
 		},
 		{
 			name: "stress",
 			iconPath: "/stormIcon.svg",
 			altText: "3d icon of clouds with lightning",
+			habitId: 5,
 		},
 		{
 			name: "connection",
 			iconPath: "/heartIcon.svg",
 			altText: "3d icon of red heart",
+			habitId: 7,
 		},
 		{
 			name: "food",
 			iconPath: "/carrotIcon.svg",
 			altText: "3d icon of one raw carrot",
+			habitId: 3,
 		},
 	];
 	return (
@@ -44,6 +49,7 @@ const SystemsOverview = () => {
 						name={card.name}
 						iconPath={card.iconPath}
 						altText={card.altText}
+						habitId={card.habitId}
 					/>
 				))}
 			</div>
