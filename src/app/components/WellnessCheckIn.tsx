@@ -71,12 +71,16 @@ const WellnessCheckIn = () => {
 
 	return (
 		<React.Fragment>
-			<h5 className="text-dark-maroon font-semibold mb-5 text-xl">
+			<h5 className="text-dark-maroon font-normal sm:font-medium mb-5 text-2xl text-center sm:text-start">
 				wellness check-in
 			</h5>
 
-			<div className="flex mb-10">
-				<div className="gap-6 grid sm:grid-cols-2">
+			<div className="mobile-progress-bar mb-6">
+				<CircleProgressBar />
+			</div>
+
+			<div className="flex flex-col lg:flex-row mb-10 max-w-3xl">
+				<div className="gap-5 sm:gap-6 grid grid-cols-2 sm:grid-cols-2 mb-3 lg:mb-0">
 					{checkInCards.map((card, index) => (
 						<div
 							className={`flex justify-center items-center bg-pinky-white drop-shadow-2xl rounded-xl p-5 border ${
@@ -94,8 +98,11 @@ const WellnessCheckIn = () => {
 						</div>
 					))}
 				</div>
-				<div className="flex flex-col justify-between lg:flex-row">
-					<CircleProgressBar />
+				<div className="flex justify-center sm:justify-start lg:ml-8 lg:flex-col lg:items-center">
+					<div className="flex desktop-progress-bar">
+						<CircleProgressBar />
+					</div>
+
 					<button
 						onClick={() => submitLog(checkInCards)}
 						className="flex bg-magenta text-white rounded-lg py-2 mt-4 w-fit px-6 self-center justify-end"

@@ -3,19 +3,19 @@ import React from "react";
 const SelfCareToolkit = () => {
 	return (
 		<React.Fragment>
-			<div className="p-7 pt-10">
+			<div className="p-16">
 				<h3 className="text-4xl mb-4">
 					self-care <br />
 					toolkit
 				</h3>
 
-				<div className="shadow rounded-lg">
-					<div>YOUTUBE VIDEO</div>
-					<div>YOUTUBE VIDEO</div>
-					<div>YOUTUBE VIDEO</div>
-					<div>YOUTUBE VIDEO</div>
-					<div>YOUTUBE VIDEO</div>
-					<div>YOUTUBE VIDEO</div>
+				<div className="flex flex-col shadow rounded-lg gap-5 p-7">
+					<div className="h-20 w-40 bg-black">YOUTUBE VIDEO</div>
+					<div className="h-20 w-40 bg-black">YOUTUBE VIDEO</div>
+					<div className="h-20 w-40 bg-black">YOUTUBE VIDEO</div>
+					<div className="h-20 w-40 bg-black">YOUTUBE VIDEO</div>
+					<div className="h-20 w-40 bg-black">YOUTUBE VIDEO</div>
+					<div className="h-20 w-40 bg-black">YOUTUBE VIDEO</div>
 				</div>
 
 				{/* <img

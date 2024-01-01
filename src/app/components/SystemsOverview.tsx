@@ -39,7 +39,7 @@ const SystemsOverview = () => {
 	];
 	return (
 		<React.Fragment>
-			<h5 className="text-dark-maroon font-semibold text-lg mb-5">
+			<h5 className="text-dark-maroon font-semibold text-lg mb-5 text-center sm:text-start">
 				systems functioning • 2 warnings
 			</h5>
 			<div className="gap-4 grid grid-cols-2 sm:grid-cols-4 max-w-4xl">
