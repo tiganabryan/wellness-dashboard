@@ -77,7 +77,7 @@ const WellnessCheckIn = () => {
 
 			<div className="flex mb-10">
 				<div className="gap-6 grid sm:grid-cols-2">
-					{checkInCards.map((card) => (
+					{checkInCards.map((card, index) => (
 						<div
 							className={`flex justify-center items-center bg-pinky-white drop-shadow-2xl rounded-xl p-5 border ${
 								card.stateValue
@@ -88,6 +88,7 @@ const WellnessCheckIn = () => {
 								card.stateSetter(!card.stateValue);
 								console.log(card.stateValue);
 							}}
+							key={index}
 						>
 							<h4>{card.question}</h4>
 						</div>
