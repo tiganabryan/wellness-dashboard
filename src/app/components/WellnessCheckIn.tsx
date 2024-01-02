@@ -3,7 +3,8 @@ import React from "react";
 import prisma from "../../../lib/prisma";
 import { useState, useEffect } from "react";
 import CircleProgressBar from "./CircleProgressBar";
-
+import { useSelector, useDispatch } from "react-redux";
+import { inputToggleSlice } from "../../../redux/slices/habitWarnings/habitWarningSlice";
 interface checkInCard {
 	name: string;
 	question: string;
