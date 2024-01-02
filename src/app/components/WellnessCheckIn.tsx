@@ -13,6 +13,7 @@ import {
 	useAppStore,
 } from "../../../redux/hooks";
 import { InputState } from "../../../redux/slices/habitWarnings/habitWarningSlice";
+import { toggleInput } from "../../../redux/slices/habitWarnings/habitWarningSlice";
 
 const WellnessCheckIn = () => {
 	const store = useAppStore();
@@ -45,6 +46,8 @@ const WellnessCheckIn = () => {
 	// 	}
 	// };
 
+	// const habitNames  = ['water', "stress", ]
+
 	return (
 		<React.Fragment>
 			<h5 className="text-dark-maroon font-normal sm:font-medium mb-5 text-2xl text-center sm:text-start">
@@ -57,8 +60,24 @@ const WellnessCheckIn = () => {
 
 			<div className="flex flex-col lg:flex-row mb-10 max-w-3xl">
 				<div className="gap-5 sm:gap-6 grid grid-cols-2 sm:grid-cols-2 mb-3 lg:mb-0">
-					{checkInCards?.map((card: InputState, index: number) => (
-						<WellnessCheckInCard key={index} card={card} />
+					{checkInCards.map((card: InputState, index: number) => (
+						// <WellnessCheckInCard key={index} card={card} />
+						<div
+							className={`flex justify-center items-center bg-pinky-white drop-shadow-2xl rounded-xl p-5 border ${
+								card.completed
+									? "border-green border-2"
+									: "border-0"
+							}`}
+							onClick={() => {
+								// dispatch(toggleInput(card.name));
+								dispatch(toggleInput(card.name));
+								// WHERE I WAS: DISPATCHING CORRECT VALUE. THE CLICK IS SUPPOSED TO TRIGGER THE TOGGLE IN THE CORRESPONDING INPUT (MULTIPLE INPUTS, WE'RE MAPPING OVER THEM TO RENDER THE CARDS)
+								// console.log(card.stateValue);
+							}}
+							key={index}
+						>
+							<h4>{card.question}</h4>
+						</div>
 					))}
 				</div>
 				<div className="flex justify-center sm:justify-start lg:ml-8 lg:flex-col lg:items-center">

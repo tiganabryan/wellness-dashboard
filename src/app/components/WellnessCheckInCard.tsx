@@ -24,9 +24,10 @@ const WellnessCheckInCard = (card: any, key: number) => {
 					card.completed ? "border-green border-2" : "border-0"
 				}`}
 				onClick={() => {
-					dispatch(toggleInput(card.name));
+					// dispatch(toggleInput(card.name));
+					dispatch(toggleInput("water"));
 					// WHERE I WAS: DISPATCHING CORRECT VALUE. THE CLICK IS SUPPOSED TO TRIGGER THE TOGGLE IN THE CORRESPONDING INPUT (MULTIPLE INPUTS, WE'RE MAPPING OVER THEM TO RENDER THE CARDS)
-					console.log(card.stateValue);
+					// console.log(card.stateValue);
 				}}
 				key={key}
 			>

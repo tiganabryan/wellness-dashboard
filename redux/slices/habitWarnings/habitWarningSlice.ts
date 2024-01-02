@@ -36,25 +36,21 @@ const initialState: InputState[] = [
 	},
 ];
 
-// const initialState = {
-// 	water: false,
-// 	stress: false,
-// 	food: false,
-// 	conversation: false,
-// } as InputState;
-
 export const inputToggleSlice = createSlice({
 	name: "inputToggle",
 	initialState,
 	reducers: {
 		toggleInput: (state, action: PayloadAction<string>) => {
 			const cardName = action.payload;
+
 			const foundCard = state.find((card) => card.name === cardName);
 
 			if (foundCard) {
 				foundCard.completed = !foundCard.completed;
+				// console.log(foundCard.completed);
+				console.log(foundCard.completed);
 			} else {
-				console.warn(`unknown card name: ${cardName}`);
+				console.warn(`ERROR! unknown card name: ${cardName}`);
 			}
 		},
 	},
