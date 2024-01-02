@@ -1,8 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
+import toggleReducer from "../redux/slices/habitWarnings/habitWarningSlice";
 
 export const makeStore = () => {
 	return configureStore({
-		reducer: {},
+		reducer: {
+			toggle: toggleReducer,
+		},
 	});
 };
 

@@ -4,6 +4,7 @@ import UserGreeting from "./components/UserGreeting";
 import WellnessCheckIn from "./components/WellnessCheckIn";
 import SystemsOverview from "./components/SystemsOverview";
 import DevelopersNote from "./components/DevelopersNote";
+import WellnessCheckInProvider from "./components/WellnessCheckInProvider";
 
 export default function Home() {
 	return (
@@ -12,7 +13,8 @@ export default function Home() {
 				<div className="flex flex-col basis-3/4 pt-10 px-10 mb-10 lg:mb-0">
 					{/* <DevelopersNote /> */}
 					<UserGreeting />
-					<WellnessCheckIn />
+					{/* <WellnessCheckIn /> */}
+					<WellnessCheckInProvider />
 					<SystemsOverview />
 				</div>
 
