@@ -26,7 +26,7 @@ const CircleProgressBar = () => {
 		<div className="flex justify-center sm:justify-start">
 			<CircularProgressbar
 				value={value}
-				maxValue={5}
+				maxValue={4}
 				text={`${value}/4`}
 				strokeWidth={15}
 				styles={buildStyles({
