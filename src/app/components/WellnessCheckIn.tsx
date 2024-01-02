@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import prisma from "../../../lib/prisma";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import CircleProgressBar from "./CircleProgressBar";
 import { useSelector, useDispatch } from "react-redux";
 import { inputToggleSlice } from "../../../redux/slices/habitWarnings/habitWarningSlice";
@@ -14,6 +14,7 @@ import {
 } from "../../../redux/hooks";
 import { InputState } from "../../../redux/slices/habitWarnings/habitWarningSlice";
 import { toggleInput } from "../../../redux/slices/habitWarnings/habitWarningSlice";
+import { setValue } from "../../../redux/slices/circleProgressBar/circleProgressBarSlice";
 
 const WellnessCheckIn = () => {
 	const store = useAppStore();
@@ -21,11 +22,13 @@ const WellnessCheckIn = () => {
 	const checkInCards = useAppSelector((state) => state.toggle);
 	const dispatch = useAppDispatch();
 
-	const [enoughWater, setEnoughWater] = useState(false);
-	const [enoughFood, setEnoughFood] = useState(false);
-	const [conversation, setConversation] = useState(false);
-	const [stressed, setStress] = useState(false);
-	const [enoughSleep, setEnoughSleep] = useState(false);
+	const numHabitsCompleted = useAppSelector((state) =>
+		state.toggle.filter((card) => card.completed)
+	).length;
+
+	console.log(numHabitsCompleted);
+
+	dispatch(setValue(numHabitsCompleted));
 
 	// const submitLog = async (checkInCards: checkInCard[]) => {
 	// 	try {
@@ -69,10 +72,7 @@ const WellnessCheckIn = () => {
 									: "border-0"
 							}`}
 							onClick={() => {
-								// dispatch(toggleInput(card.name));
 								dispatch(toggleInput(card.name));
-								// WHERE I WAS: DISPATCHING CORRECT VALUE. THE CLICK IS SUPPOSED TO TRIGGER THE TOGGLE IN THE CORRESPONDING INPUT (MULTIPLE INPUTS, WE'RE MAPPING OVER THEM TO RENDER THE CARDS)
-								// console.log(card.stateValue);
 							}}
 							key={index}
 						>
@@ -85,10 +85,7 @@ const WellnessCheckIn = () => {
 						<CircleProgressBar />
 					</div>
 
-					<button
-						// onClick={() => submitLog(checkInCards)}
-						className="flex bg-magenta text-white rounded-lg py-2 mt-4 w-fit px-6 self-center justify-end"
-					>
+					<button className="flex bg-magenta text-white rounded-lg py-2 mt-4 w-fit px-6 self-center justify-end">
 						submit
 					</button>
 				</div>

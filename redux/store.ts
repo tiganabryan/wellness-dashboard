@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import toggleReducer from "../redux/slices/habitWarnings/habitWarningSlice";
+import progressBarReducer from "../redux/slices/circleProgressBar/circleProgressBarSlice";
 
 export const makeStore = () => {
 	return configureStore({
 		reducer: {
 			toggle: toggleReducer,
+			progressBarValue: progressBarReducer,
 		},
 	});
 };

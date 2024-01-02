@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
+import { counterSlice } from "../circleProgressBar/circleProgressBarSlice";
 
 export interface InputState {
 	name: string;

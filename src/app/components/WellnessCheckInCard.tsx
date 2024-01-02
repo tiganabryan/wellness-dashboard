@@ -6,6 +6,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { inputToggleSlice } from "../../../redux/slices/habitWarnings/habitWarningSlice";
 import { toggleInput } from "../../../redux/slices/habitWarnings/habitWarningSlice";
 import { InputState } from "../../../redux/slices/habitWarnings/habitWarningSlice";
+import { ProgressBarState } from "../../../redux/slices/circleProgressBar/circleProgressBarSlice";
+import { setValue } from "../../../redux/slices/circleProgressBar/circleProgressBarSlice";
 
 import {
 	useAppDispatch,
@@ -28,6 +30,12 @@ const WellnessCheckInCard = (card: any, key: number) => {
 					dispatch(toggleInput("water"));
 					// WHERE I WAS: DISPATCHING CORRECT VALUE. THE CLICK IS SUPPOSED TO TRIGGER THE TOGGLE IN THE CORRESPONDING INPUT (MULTIPLE INPUTS, WE'RE MAPPING OVER THEM TO RENDER THE CARDS)
 					// console.log(card.stateValue);
+					// const completedCount = useAppSelector(
+					// 	(state) =>
+					// 		state.toggle.filter((card) => card.completed).length
+					// );
+
+					// dispatch(setValue(completedCount));
 				}}
 				key={key}
 			>

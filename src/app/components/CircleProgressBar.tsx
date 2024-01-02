@@ -1,15 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
+import {
+	useAppDispatch,
+	useAppSelector,
+	useAppStore,
+} from "../../../redux/hooks";
+
+import {
+	increment,
+	decrement,
+	ProgressBarState,
+} from "../../../redux/slices/circleProgressBar/circleProgressBarSlice";
+
 const CircleProgressBar = () => {
-	const value = 2;
+	const value = useAppSelector((state) => state.progressBarValue.value);
+	const checkInCard = useAppSelector((state) => state.toggle);
+
+	useEffect(() => {
+		console.log("TEST WORKING");
+	}, [checkInCard]);
+
 	return (
 		<div className="flex justify-center sm:justify-start">
 			<CircularProgressbar
 				value={value}
 				maxValue={5}
-				text={`${value}/5`}
+				text={`${value}/4`}
 				strokeWidth={15}
 				styles={buildStyles({
 					textSize: "8px",
