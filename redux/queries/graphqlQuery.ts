@@ -31,7 +31,7 @@ export const graphqlApi = createApi({
 				url: "",
 				method: "POST",
 				body: {
-					query: gql`
+					query: `
 						query Habit($habitId: Int!) {
 							habit(id: $habitId) {
 								title
@@ -50,7 +50,7 @@ export const graphqlApi = createApi({
 				url: "",
 				method: "POST",
 				body: {
-					query: gql`
+					query: `
 						mutation LogHabit($input: HabitInput!) {
 							LogHabit(input: $input) {
 								id
