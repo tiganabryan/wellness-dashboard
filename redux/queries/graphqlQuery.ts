@@ -11,6 +11,17 @@ interface HabitQueryArgs {
 	id: number;
 }
 
+interface LogInput {
+	habitId: number;
+	completed: boolean;
+}
+
+interface LogResponse {
+	id: number;
+	createdAt: string;
+	completed: boolean;
+}
+
 export const graphqlApi = createApi({
 	reducerPath: "graphqlApi",
 	baseQuery: fetchBaseQuery({ baseUrl: "/api/graphql" }),
@@ -20,7 +31,7 @@ export const graphqlApi = createApi({
 				url: "",
 				method: "POST",
 				body: {
-					query: `
+					query: gql`
 						query Habit($habitId: Int!) {
 							habit(id: $habitId) {
 								title
@@ -33,7 +44,25 @@ export const graphqlApi = createApi({
 				},
 			}),
 		}),
+
+		logHabit: builder.mutation<LogResponse, LogInput>({
+			query: (input) => ({
+				url: "",
+				method: "POST",
+				body: {
+					query: gql`
+						mutation LogHabit($input: HabitInput!) {
+							LogHabit(input: $input) {
+								id
+								title
+							}
+						}
+					`,
+					variables: { input },
+				},
+			}),
+		}),
 	}),
 });
 
-export const { useGetHabitByIdQuery } = graphqlApi;
+export const { useGetHabitByIdQuery, useLogHabitMutation } = graphqlApi;

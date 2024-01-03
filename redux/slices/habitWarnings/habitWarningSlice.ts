@@ -19,7 +19,8 @@ const initialState: InputState[] = [
 	},
 	{
 		name: "stress",
-		question: "were you stressed today?",
+		// question: "were you stressed today?",
+		question: "were you active today?",
 		habitId: 5,
 		completed: false,
 	},
