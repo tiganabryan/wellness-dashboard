@@ -10,7 +10,8 @@
 		"postinstall": "prisma generate"
 	},
 	"dependencies": {
-		"@apollo/client": "^3.8.8",
+		"@apollo/client": "^3.8.0-rc.2",
+		"@apollo/experimental-nextjs-app-support": "^0.5.2",
 		"@apollo/server": "^4.10.0",
 		"@as-integrations/next": "^3.0.0",
 		"@graphql-yoga/node": "^3.9.1",

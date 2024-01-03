@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import prisma from "../../../lib/prisma";
+import prisma from "../../../prisma-client/prisma";
 import { useEffect, useRef } from "react";
 import CircleProgressBar from "./CircleProgressBar";
 import { useSelector, useDispatch } from "react-redux";

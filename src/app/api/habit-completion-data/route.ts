@@ -2,7 +2,7 @@
 
 // WORK IN PROGRESS, NOT IN USE
 
-import prisma from "../../../../lib/prisma";
+import prisma from "../../../../prisma-client/prisma";
 import { NextApiRequest, NextApiResponse } from "next";
 
 // type ResponseData = {

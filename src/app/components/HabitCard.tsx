@@ -2,7 +2,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import prisma from "../../../lib/prisma";
+import prisma from "../../../prisma-client/prisma";
 import { useRouter } from "next/navigation"; // Import router
 
 const HabitCard = (habitCards: any) => {
