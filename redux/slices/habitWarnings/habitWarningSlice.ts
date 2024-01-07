@@ -7,6 +7,7 @@ export interface InputState {
 	question: string;
 	habitId: number;
 	completed: boolean;
+	showNotificationBadge: boolean;
 	[key: string]: string | number | boolean;
 }
 
@@ -16,6 +17,7 @@ const initialState: InputState[] = [
 		question: "did you drink enough water today?",
 		habitId: 2,
 		completed: false,
+		showNotificationBadge: false,
 	},
 	{
 		name: "stress",
@@ -23,18 +25,21 @@ const initialState: InputState[] = [
 		question: "were you active today?",
 		habitId: 5,
 		completed: false,
+		showNotificationBadge: false,
 	},
 	{
 		name: "food",
 		question: "did you eat enough today?",
 		habitId: 3,
 		completed: false,
+		showNotificationBadge: false,
 	},
 	{
 		name: "conversation",
 		question: "did you have an uplifting conversation today?",
 		habitId: 7,
 		completed: false,
+		showNotificationBadge: false,
 	},
 ];
 
