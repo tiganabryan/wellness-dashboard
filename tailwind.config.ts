@@ -19,6 +19,12 @@ const config: Config = {
 			"dark-maroon": "#624C62",
 			green: "#87FF85",
 			coral: "#FF6A6A",
+			"light-pink": "#F4D7EA",
+			"toolkit-start-pink": "#FFEFF9",
+			"toolkit-middle-pink": "#F5BAF6",
+			"toolkit-end-pink": "#F4D7EA",
+			black: "black",
+			yellow: "#FDFF85",
 		},
 		extend: {
 			backgroundImage: {
